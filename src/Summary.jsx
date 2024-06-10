@@ -5,9 +5,8 @@ const Summary = ({ userData }) => {
   const [windowsData, setWindowsData] = useState(null);
 
   // Retrieve userData from localStorage if not passed as prop
-  const localStorageUserData = JSON.parse(localStorage.getItem("userData"));
-  const userId = userData?.data?.user?.userId || localStorageUserData?.data?.user?.userId || "";
-  const token = userData?.data?.accessToken || localStorageUserData?.data?.accessToken || "";
+  const userId = userData?.data?.user?.userId;
+  const token = userData?.data?.accessToken;
 
   useEffect(() => {
     async function fetchData() {

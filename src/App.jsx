@@ -9,11 +9,12 @@ const App = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [message, setMessage] = useState("");
-  const [userData, setUserData] = useState({});
+   // Initialize userData from localStorage if available
+   const [userData, setUserData] = useState(() => {
+    const savedUserData = localStorage.getItem("userData");
+    return savedUserData ? JSON.parse(savedUserData) : {};
+  });
 
-  const [userId, setUserId] = useState(userData?.data?.user?.userId || "");
-
-  const [token, setToken] = useState(userData?.data?.accessToken || "");
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
