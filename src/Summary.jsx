@@ -12,7 +12,7 @@ const Summary = ({ userId }) => {
           {
             headers: {    
               Authorization:
-                "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NjQ0YTJhZjhhOWIxZTFjN2U2YWViYTYiLCJyb2xlIjoiU3VwZXIgQWRtaW4iLCJvcmdhbmlzYXRpb24iOiJtb2Jpc2VjIHRlY2hub2xvZ2llcyBwdnQuIGx0ZCIsImRlcGFydG1lbnQiOiIiLCJpYXQiOjE3MTc3NTQwMzIsImV4cCI6MTcxNzg0MDQzMn0.wUn_KGLEpGd_Smk_QBgt-e0j8xfPapVUVgen4Gxt9M8",
+                "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NjQ0YTJhZjhhOWIxZTFjN2U2YWViYTYiLCJyb2xlIjoiU3VwZXIgQWRtaW4iLCJvcmdhbmlzYXRpb24iOiJtb2Jpc2VjIHRlY2hub2xvZ2llcyBwdnQuIGx0ZCIsImRlcGFydG1lbnQiOiIiLCJpYXQiOjE3MTgwMDM5OTAsImV4cCI6MTcxODA5MDM5MH0.0QLqj2fZydZ2QGRvU85WDCX5qwCJtxeaLdDxkbTtcX0",
             },
           }
         );
