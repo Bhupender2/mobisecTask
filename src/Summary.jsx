@@ -1,18 +1,26 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 
-const Summary = ({ userId }) => {
+const Summary = ({ userData }) => {
   const [windowsData, setWindowsData] = useState(null);
+
+  // Retrieve userData from localStorage if not passed as prop
+  const localStorageUserData = JSON.parse(localStorage.getItem("userData"));
+  const userId = userData?.data?.user?.userId || localStorageUserData?.data?.user?.userId || "";
+  const token = userData?.data?.accessToken || localStorageUserData?.data?.accessToken || "";
 
   useEffect(() => {
     async function fetchData() {
+      if (!userId || !token) {
+        console.error("Missing userId or token");
+        return;
+      }
       try {
         const response = await axios.get(
           `https://dev.cyberauditor.in/api/v1/summary/${userId}`,
           {
             headers: {
-              Authorization:
-                "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NjQ0YTJhZjhhOWIxZTFjN2U2YWViYTYiLCJyb2xlIjoiU3VwZXIgQWRtaW4iLCJvcmdhbmlzYXRpb24iOiJtb2Jpc2VjIHRlY2hub2xvZ2llcyBwdnQuIGx0ZCIsImRlcGFydG1lbnQiOiIiLCJpYXQiOjE3MTgwMDM5OTAsImV4cCI6MTcxODA5MDM5MH0.0QLqj2fZydZ2QGRvU85WDCX5qwCJtxeaLdDxkbTtcX0",
+              Authorization: `Bearer ${token}`,
             },
           }
         );
@@ -24,7 +32,7 @@ const Summary = ({ userId }) => {
       }
     }
     fetchData();
-  }, [userId]);
+  }, [userId, token]);
 
   // Function to safely render values
   const renderValue = (value) => {

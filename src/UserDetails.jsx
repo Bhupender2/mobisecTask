@@ -1,17 +1,18 @@
-import React, { useEffect, useState } from "react";
-import { useLocation } from "react-router-dom";
+import React from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 import Summary from "./Summary";
 
 const UserDetails = () => {
   const location = useLocation();
   const { userData } = location.state || {}; // Extract userData from state
-  const [showSummary, setShowSummary] = useState(false);
+  // const [showSummary, setShowSummary] = useState(false);
+  const navigate = useNavigate();
 
-  useEffect(() => {
-    if (userData && userData.user && userData.user.userId) {
-      localStorage.setItem("userId", userData.user.userId);
-    }
-  }, [userData]);
+  // useEffect(() => {
+  //   if (userData && userData.user && userData.user.userId) {
+  //     localStorage.setItem("userId", userData.user.userId);
+  //   }
+  // }, [userData]);
 
   // Log the userData to see what's being received
   console.log("userData:", userData);
@@ -72,8 +73,15 @@ const UserDetails = () => {
           </tr>
         </tbody>
       </table>
-      <button onClick={() => setShowSummary(true)}>Show Summary</button>
-      {showSummary && <Summary userId={userData.data.user.userId} />}
+      <button
+        onClick={() =>
+          navigate("/summary")
+        }
+      >
+        {" "}
+        Summary
+      </button>
+      {/* {showSummary && <Summary userId={userData.data.user.userId} />} */}
     </div>
   );
 };
