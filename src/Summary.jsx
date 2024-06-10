@@ -10,7 +10,7 @@ const Summary = ({ userId }) => {
         const response = await axios.get(
           `https://dev.cyberauditor.in/api/v1/summary/${userId}`,
           {
-            headers: {    
+            headers: {
               Authorization:
                 "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NjQ0YTJhZjhhOWIxZTFjN2U2YWViYTYiLCJyb2xlIjoiU3VwZXIgQWRtaW4iLCJvcmdhbmlzYXRpb24iOiJtb2Jpc2VjIHRlY2hub2xvZ2llcyBwdnQuIGx0ZCIsImRlcGFydG1lbnQiOiIiLCJpYXQiOjE3MTgwMDM5OTAsImV4cCI6MTcxODA5MDM5MH0.0QLqj2fZydZ2QGRvU85WDCX5qwCJtxeaLdDxkbTtcX0",
             },
@@ -28,7 +28,7 @@ const Summary = ({ userId }) => {
 
   // Function to safely render values
   const renderValue = (value) => {
-    if (typeof value === 'object' && value !== null) {
+    if (typeof value === "object" && value !== null) {
       return JSON.stringify(value);
     }
     return value;

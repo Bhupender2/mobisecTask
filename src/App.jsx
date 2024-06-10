@@ -1,8 +1,8 @@
-import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import LoginForm from './LoginForm';
-import UserDetails from './UserDetails';
-import Summary from './Summary';
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import LoginForm from "./LoginForm";
+import UserDetails from "./UserDetails";
+import Summary from "./Summary";
 
 const App = () => {
   return (

@@ -62,7 +62,9 @@ const UserDetails = () => {
           </tr>
           <tr>
             <td>Access Token Expiry</td>
-            <td>{new Date(userData.data.accessTokenExpiry).toLocaleString()}</td>
+            <td>
+              {new Date(userData.data.accessTokenExpiry).toLocaleString()}
+            </td>
           </tr>
           <tr>
             <td>Refresh Token Expiry</td>
