@@ -31,6 +31,14 @@ const Summary = ({ userData }) => {
       }
     }
     fetchData();
+
+    // Set up polling
+   const intervalId = setInterval(fetchData, 5000); // Fetch data every 5 seconds
+
+    // Clean up the interval on component unmount
+    return () => {
+      clearInterval(intervalId);
+    };
   }, [userId, token]);
 
   // Function to safely render values
